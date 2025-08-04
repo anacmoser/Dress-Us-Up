@@ -4,7 +4,7 @@
 
 > *A game made with love, for love.*
 
-**Our Dress Up Game** é um jogo de vestir romântico e pixelado, criado como projeto pessoal em **agosto de 2025**. O objetivo é estilizar o casal **Eduardo e Ana** com roupas, olhos e cabelos — e, se você encontrar a combinação perfeita de casamento, desbloqueia uma surpresa especial!  
+**Dress Us Up!** é um jogo de vestir romântico e pixelado, criado como projeto pessoal em **agosto de 2025**. O objetivo é estilizar o casal **Eduardo e Ana** com roupas, olhos e cabelos — e, se você encontrar a combinação perfeita de casamento, desbloqueia uma surpresa especial!  
 
 Todo o código foi feito do zero, com interface leve e fofa. As opções são navegáveis por abas, os personagens são montados em camadas, e há efeitos sonoros, música e captura de tela integrada.
 
