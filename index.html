@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress Us Up!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Fredoka:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio id="bgm" src="sounds/bgm.mp3" loop></audio>
+    <audio id="changeSound" src="sounds/change.mp3"></audio>
+    <audio id="winSound" src="sounds/win.mp3"></audio>
+
+    <div class="audio-controls">
+        <img id="musicIcon" src="img/music_on.png" alt="Música" class="toggle-icon" onclick="toggleMusic()">
+        <img id="sfxIcon" src="img/sound_on.png" alt="Sons" class="toggle-icon" onclick="toggleSfx()">
+    </div>
+
+
+    <div class="arcade-frame">
+        <div class="intro-screen" id="introScreen">
+            <h1>Bem-vindo ao Jogo!</h1>
+            <p>Vista o Edu e a Ana com estilo. Ao combinar certo, algo especial acontecerá!</p>
+            <button onclick="startGame()">Começar</button>
+        </div>
+
+        <div class="win-message" id="winMessage" style="display:none">
+            <h2>Você encontrou as roupas corretas! Parabéns ❤</h2>
+            <h4>O jogo voltará em poucos segundos</h4>
+            <button onclick="resetGame(true)">Recomece</button>
+        </div>
+
+        <div class="game-container">
+            <div style="display: flex; gap: 1rem;">
+                <div class="character-box">
+                    <img src="img/char1_base.png" id="char1Base" class="character-layer">
+                    <img src="img/png.png" id="char1Eyes" class="character-layer" style="z-index:2">
+                    <img src="img/png.png" id="char1Hair" class="character-layer" style="z-index:3">
+                    <img src="img/png.png" id="char1Outfit" class="character-layer" style="z-index:4">
+                </div>
+                <div class="control-panel">
+                    <div class="tabs">
+                        <button onclick="switchTab('1', 'eyes', event)" class="active">Olhos</button>
+                        <button onclick="switchTab('1', 'hair', event)">Cabelo</button>
+                        <button onclick="switchTab('1', 'outfit', event)">Roupas</button>
+                    </div>
+                    <div id="eyesOptions1" class="option-group active"></div>
+                    <div id="hairOptions1" class="option-group"></div>
+                    <div id="outfitOptions1" class="option-group"></div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem;">
+                <div class="character-box">
+                    <img src="img/char2_base.png" id="char2Base" class="character-layer">
+                    <img src="img/png.png" id="char2Eyes" class="character-layer" style="z-index:2">
+                    <img src="img/png.png" id="char2Hair" class="character-layer" style="z-index:3">
+                    <img src="img/png.png" id="char2Outfit" class="character-layer" style="z-index:4">
+                </div>
+                <div class="control-panel">
+                    <div class="tabs">
+                        <button onclick="switchTab('2', 'eyes', event)" class="active">Olhos</button>
+                        <button onclick="switchTab('2', 'hair', event)">Cabelo</button>
+                        <button onclick="switchTab('2', 'outfit', event)">Roupas</button>
+                    </div>
+                    <div id="eyesOptions2" class="option-group active"></div>
+                    <div id="hairOptions2" class="option-group"></div>
+                    <div id="outfitOptions2" class="option-group"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-controls">
+            <button onclick="showFinalView()">Finalizar</button>
+            <button class="reset-btn" onclick="resetGame()">Resetar</button>
+        </div>
+    </div>
+
+    <div class="character-view" id="finalView">
+        <h2>linduxos</h2>
+        <div class="characters">
+            <div class="character-box">
+                <img src="img/char1_base.png" class="character-layer" />
+                <img id="finalChar1Eyes" class="character-layer" style="z-index:2">
+                <img id="finalChar1Hair" class="character-layer" style="z-index:3">
+                <img id="finalChar1Outfit" class="character-layer" style="z-index:4">
+            </div>
+            <div class="character-box">
+                <img src="img/char2_base.png" class="character-layer" />
+                <img id="finalChar2Eyes" class="character-layer" style="z-index:2">
+                <img id="finalChar2Hair" class="character-layer" style="z-index:3">
+                <img id="finalChar2Outfit" class="character-layer" style="z-index:4">
+            </div>
+        </div>
+        <button onclick="closeFinalView()">Voltar</button>
+        <button onclick="captureScreenshot()">Capturar</button>
+
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>

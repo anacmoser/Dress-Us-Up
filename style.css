@@ -1,0 +1,292 @@
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 0;
+          font-family: 'Fredoka', cursive;
+          background: linear-gradient(to bottom right, #fce4ec, #e1f5fe);
+          color: #444;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+      }
+
+      .arcade-frame {
+          background: #fff5f8;
+          border: 8px solid #f8bbd0;
+          border-radius: 20px;
+          box-shadow: 0 0 20px #f48fb1;
+          padding: 2rem;
+          width: 90vw;
+          max-width: 1200px;
+          min-height: 90vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+
+      .intro-screen,
+      .win-message {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.95);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 2rem;
+          z-index: 20;
+          font-family: 'Baloo 2', cursive;
+      }
+
+      button {
+          padding: 0.6rem 1.4rem;
+          font-size: 1.1rem;
+          border: none;
+          border-radius: 12px;
+          background: linear-gradient(to bottom, #f8bbd0, #f48fb1);
+          color: white;
+          cursor: pointer;
+          font-family: 'Baloo 2', cursive;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.2s, background 0.3s;
+      }
+
+      button:hover {
+          background: linear-gradient(to bottom, #f48fb1, #ec407a);
+          transform: scale(1.05);
+      }
+
+      button:active {
+          transform: scale(0.97);
+      }
+
+      .footer-controls button {
+          background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
+          color: #880e4f;
+          font-size: 1rem;
+          font-weight: bold;
+      }
+
+      .footer-controls button:hover {
+          background: linear-gradient(to bottom, #f8bbd0, #f48fb1);
+          color: white;
+      }
+
+      .game-container {
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-start;
+          flex-grow: 1;
+          flex-wrap: wrap;
+          gap: 1rem;
+          overflow: auto;
+      }
+
+      .character-box {
+          position: relative;
+          width: 240px;
+          height: 240px;
+          background-color: #fff0f5;
+          border: 3px solid #f8bbd0;
+          border-radius: 15px;
+          overflow: hidden;
+      }
+
+      .character-layer {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          image-rendering: pixelated;
+      }
+
+      .control-panel {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          background-color: #fce4ec;
+          padding: 1rem;
+          border-radius: 15px;
+          min-width: 240px;
+      }
+
+      .tabs {
+          display: flex;
+          gap: 0.5rem;
+          flex-wrap: wrap;
+      }
+
+
+      .option-group {
+          display: none;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+      }
+
+      .option-group.active {
+          display: flex;
+      }
+
+      .option-group img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border: 2px solid transparent;
+          cursor: pointer;
+          border-radius: 10px;
+      }
+
+      .option-group img.selected {
+          border-color: #ec407a;
+      }
+
+      .footer-controls {
+          text-align: center;
+          margin-top: 1rem;
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+
+      .toggle-icon {
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+      }
+
+      .toggle-icon:hover {
+          transform: scale(1.1);
+      }
+
+      .toggle-icon.disabled {
+          opacity: 0.5;
+          filter: grayscale(100%);
+      }
+
+
+      @media (max-width: 768px) {
+          .game-container {
+              flex-direction: column;
+              align-items: center;
+          }
+
+          .character-box {
+              width: 180px;
+              height: 180px;
+          }
+
+          .option-group img {
+              width: 60px;
+              height: 60px;
+          }
+
+          .control-panel {
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 0.5rem;
+              min-width: unset;
+          }
+      }
+
+      .option-group {
+          display: none;
+          grid-template-columns: repeat(3, 80px);
+          justify-content: center;
+          gap: 0.5rem 1rem;
+      }
+
+      .option-group.active {
+          display: grid;
+      }
+
+      .option-group img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border: 2px solid transparent;
+          cursor: pointer;
+          border-radius: 10px;
+      }
+
+      .option-group img.selected {
+          border-color: #ec407a;
+      }
+
+      .character-view {
+          display: none;
+          justify-content: center;
+          gap: 2rem;
+          align-items: center;
+          padding: 2rem;
+          background-color: rgba(255, 255, 255, 0.95);
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 30;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          flex-direction: column;
+      }
+
+      .character-view .characters {
+          display: flex;
+          gap: 2rem;
+      }
+
+      .audio-controls {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          z-index: 100;
+          display: flex;
+          gap: 10px;
+          background-color: rgba(255, 255, 255, 0.7);
+          padding: 8px 12px;
+          border-radius: 12px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .toggle-icon {
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+      }
+
+      .toggle-icon:hover {
+          transform: scale(1.1);
+      }
+
+      .toggle-icon.disabled {
+          opacity: 0.4;
+          filter: grayscale(100%);
+      }
+
+
+      @media (max-width: 768px) {
+          .character-view .characters {
+              flex-direction: column;
+          }
+
+          .option-group {
+              grid-template-columns: repeat(2, 1fr);
+              /* 2 por linha em mobile */
+          }
+
+          .character-box {
+              width: 180px;
+              height: 180px;
+          }
+      }
