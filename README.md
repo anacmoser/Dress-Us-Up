@@ -30,7 +30,7 @@ Todo o código foi feito do zero, com interface leve e fofa. As opções são na
 ## 🚀 Como jogar
 
 ✅ Não é necessário clonar o repositório. Basta acessar:  
-👉 [https://seu-usuario.github.io/seu-repo/](https://seu-usuario.github.io/seu-repo/)
+👉 [https://seu-usuario.github.io/seu-repo/](https://anacmoser.github.io/Dress-Us-Up/)
 
 ---
 
